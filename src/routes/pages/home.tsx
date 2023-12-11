@@ -1,10 +1,9 @@
-import { Slider } from "@/presentation/components/Slider"
-import { FC } from "react"
+import { FC } from 'react'
 
 const HomePage: FC = () => {
-  return <div>
-    <Slider value={50} onChange={console.log} />
-  </div>
+  return (
+    <div css={{ maxWidth: '1200px', margin: '0 auto', padding: '10px' }}></div>
+  )
 }
 
 export default HomePage
