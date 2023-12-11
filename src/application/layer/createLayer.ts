@@ -1,6 +1,6 @@
-import { LayerEntity } from '@/domain/entities/Layer'
+import { LayerRepository } from '@/domain/repositories/Layer'
 import { defaultLayerItem } from '@/infrastructure/data/layer.data'
 
-export const createLayerUserCase = (): LayerEntity => {
+export const createLayerUserCase: LayerRepository['createLayerItem'] = () => {
   return defaultLayerItem
 }

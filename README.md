@@ -8,7 +8,7 @@ Người dùng có thể thêm, sửa, xoá các lớp box shadow. Mỗi lớp s
 
 - Các thực thể:
   - Layer (lớp): chứa id, label, box shadow settings (các tuỳ chỉnh của box shadow).
-  - Box shadow settings: chỉnh đổ bóng theo chiều: dọc + ngang, chỉnh độ mờ, độ phủ, đảo ngược bóng đổ, chỉnh màu bóng.
+  - Box shadow settings: thuộc tính đổ bóng theo chiều: dọc + ngang, độ mờ, độ phủ, đảo ngược bóng đổ, chỉnh màu bóng.
   
 - Actor: Nguời dùng.
   
