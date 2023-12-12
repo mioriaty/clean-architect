@@ -1,6 +1,5 @@
-import { LayerRepository } from '@/domain/repositories/Layer'
-import { defaultLayerItem } from '@/infrastructure/data/layer.data'
+import { layerService } from '@/infrastructure/services/layer.service'
 
-export const createLayerUserCase: LayerRepository['createLayerItem'] = () => {
-  return defaultLayerItem
+export const createLayerUserCase = () => {
+  return layerService.createLayerItem()
 }

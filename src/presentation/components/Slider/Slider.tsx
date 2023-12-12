@@ -1,6 +1,6 @@
 import { SliderProps } from '@/presentation/components/Slider/types'
 import { Tooltip } from '@/presentation/components/Tooltip'
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import * as styles from './styles'
 
 export const Slider: FC<SliderProps> = ({
@@ -10,20 +10,33 @@ export const Slider: FC<SliderProps> = ({
   min = 0,
   step = 1,
 }) => {
+  const [rangeValue, setRangeValue] = useState(value)
+
+  useEffect(() => {
+    if (value) {
+      setRangeValue(value)
+    }
+  }, [])
+
+  useEffect(() => {
+    onChange(rangeValue)
+  }, [rangeValue])
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onChange(Number(event.target.value))
+    setRangeValue(Number(event.target.value))
   }
 
   return (
     <div css={styles.range}>
       <Tooltip
-        text={value.toString()}
+        text={rangeValue.toString()}
         css={{ width: '100%', display: 'block !important' }}
       >
         <input
           type="range"
           onChange={handleChange}
-          value={value}
+          value={rangeValue}
+          defaultValue={rangeValue}
           max={max}
           min={min}
           step={step}

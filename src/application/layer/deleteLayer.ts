@@ -1,9 +1,6 @@
 import { LayerEntity } from '@/domain/entities/Layer'
-import { LayerRepository } from '@/domain/repositories/Layer'
+import { layerService } from '@/infrastructure/services/layer.service'
 
-export const deleteLayerUserCase: LayerRepository['deleteLayerItem'] = (
-  layers: LayerEntity[],
-  layerId: string
-) => {
-  return layers.filter((layer) => layer.id !== layerId)
+export const deleteLayerUserCase = (layers: LayerEntity[], layerId: string) => {
+  return layerService.deleteLayerItem(layers, layerId)
 }

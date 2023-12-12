@@ -2,7 +2,6 @@ import { BoxShadowEntity } from '@/domain/entities/BoxShadow'
 import { LayerEntity } from '@/domain/entities/Layer'
 
 export interface LayerRepository {
-  getLayerItems(): LayerEntity[]
   getLayerItem(layers: LayerEntity[], id: string): LayerEntity | null
   createLayerItem(): LayerEntity
   updateLayerItem(
@@ -10,5 +9,5 @@ export interface LayerRepository {
     id: string,
     settings: Partial<BoxShadowEntity>
   ): LayerEntity[]
-  deleteLayerItem(layers: LayerEntity[], id: string): void
+  deleteLayerItem(layers: LayerEntity[], id: string): LayerEntity[]
 }

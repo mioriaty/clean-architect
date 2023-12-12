@@ -3,6 +3,7 @@ import { deleteLayerUserCase } from '@/application/layer/deleteLayer'
 import { selectLayerUserCase } from '@/application/layer/selectLayer'
 import { updateLayerUserCase } from '@/application/layer/updateLayer'
 import { LayerEntity } from '@/domain/entities/Layer'
+import { defaultLayerItem } from '@/infrastructure/data/layer.data'
 import { create } from 'zustand'
 
 export interface LayerStore {
@@ -15,7 +16,7 @@ export interface LayerStore {
 }
 
 export const useLayerStore = create<LayerStore>((set) => ({
-  layers: [],
+  layers: [defaultLayerItem],
   selectedLayer: null,
   addLayer() {
     const newLayer = createLayerUserCase()
@@ -37,3 +38,8 @@ export const useLayerStore = create<LayerStore>((set) => ({
     }))
   },
 }))
+
+// Logger middleware
+useLayerStore.subscribe((state) => {
+  console.log("State changed:", state);
+});

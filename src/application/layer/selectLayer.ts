@@ -1,6 +1,6 @@
 import { LayerEntity } from '@/domain/entities/Layer'
-import { LayerRepository } from '@/domain/repositories/Layer'
+import { layerService } from '@/infrastructure/services/layer.service'
 
-export const selectLayerUserCase: LayerRepository['getLayerItem'] = (layers: LayerEntity[], layerId: string) => {
-  return layers.find((layer) => layer.id === layerId) || null
+export const selectLayerUserCase = (layers: LayerEntity[], layerId: string) => {
+  return layerService.getLayerItem(layers, layerId)
 }
