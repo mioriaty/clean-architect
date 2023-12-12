@@ -6,7 +6,7 @@ export const Box: FC<BoxProps> = ({ children, label, containerCss: css, labelCss
   return (
     <div css={[styles.container, css]}>
       <p css={[styles.label, labelCss]}>{label}</p>
-      <div>{children}</div>
+      {children}
     </div>
   )
 }

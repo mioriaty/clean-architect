@@ -2,13 +2,15 @@ import { BoxShadowEntity } from '@/domain/entities/BoxShadow'
 import { LayerEntity } from '@/domain/entities/Layer'
 import { LayerRepository } from '@/domain/repositories/Layer'
 import { defaultLayerItem } from '@/infrastructure/data/layer.data'
+import { reorder } from '@/presentation/utils/reorder'
+import { v4 } from 'uuid'
 
 class LayerService implements LayerRepository {
-  getLayerItem(layers: LayerEntity[], id: string): LayerEntity | null {
-    return layers.find((layer) => layer.id === id) || null
-  }
   createLayerItem(): LayerEntity {
-    return defaultLayerItem
+    return {
+      ...defaultLayerItem,
+      id: v4(),
+    }
   }
   updateLayerItem(
     layers: LayerEntity[],
@@ -30,6 +32,13 @@ class LayerService implements LayerRepository {
   }
   deleteLayerItem(layers: LayerEntity[], id: string): LayerEntity[] {
     return layers.filter((layer) => layer.id !== id)
+  }
+  sortLayerItem(
+    layers: LayerEntity[],
+    sourceIndex: number,
+    destinationIndex: number
+  ): LayerEntity[] {
+    return reorder(layers, sourceIndex, destinationIndex)
   }
 }
 

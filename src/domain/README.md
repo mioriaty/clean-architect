@@ -7,4 +7,4 @@
 ## Repository
 
 - Là lớp ở giữa data layer và domain layer.
-- Là nơi trung tâm để lưu trữ tất cả các hoạt động cụ thể của mô hình.
+- Là nơi khai báo các hoạt động cụ thể của mô hình.

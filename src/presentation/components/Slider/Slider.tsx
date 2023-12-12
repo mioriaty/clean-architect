@@ -16,7 +16,7 @@ export const Slider: FC<SliderProps> = ({
     if (value) {
       setRangeValue(value)
     }
-  }, [])
+  }, [value])
 
   useEffect(() => {
     onChange(rangeValue)

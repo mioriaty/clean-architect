@@ -1,18 +1,25 @@
 import { Box } from '@/presentation/components/Box'
+import { Button } from '@/presentation/components/Button'
+import { ColorPicker } from '@/presentation/components/ColorPicker'
 import { LayerItem } from '@/presentation/components/LayerItem'
 import { Slider } from '@/presentation/components/Slider'
 import { SortableList } from '@/presentation/components/SortableList'
 import { useLayerStore } from '@/stores/layer.store'
 
 export const LayerContainer = () => {
-  const { layers, selectedLayer, selectLayer, updateLayer } = useLayerStore()
+  const {
+    layers,
+    idActive,
+    selectLayer,
+    updateLayer,
+    addLayer,
+    removeLayer,
+    sortLayers,
+  } = useLayerStore()
+  const selectedLayer = layers.find((layer) => layer.id === idActive)
 
   return (
-    <Box
-      label="Box-shadow CSS generator"
-      containerCss={{ width: '50%' }}
-      labelCss={{ fontSize: '24px' }}
-    >
+    <Box label="Box-shadow CSS generator" labelCss={{ fontSize: '24px' }}>
       {selectedLayer && (
         <>
           <Box label="Shift right" containerCss={{ marginBottom: '10px' }}>
@@ -54,6 +61,7 @@ export const LayerContainer = () => {
           <Box label="Inset" containerCss={{ marginBottom: '10px' }}>
             <input
               type="checkbox"
+              value={selectedLayer.settings.inset.toString()}
               checked={selectedLayer.settings.inset}
               onChange={(e) => {
                 updateLayer(selectedLayer.id, { inset: e.target.checked })
@@ -62,11 +70,10 @@ export const LayerContainer = () => {
           </Box>
 
           <Box label="Color">
-            <input
-              type="color"
-              value={selectedLayer.settings.color}
-              onChange={(e) => {
-                updateLayer(selectedLayer.id, { color: e.target.value })
+            <ColorPicker
+              color={selectedLayer.settings.color}
+              onChange={(color) => {
+                updateLayer(selectedLayer.id, { color })
               }}
             />
           </Box>
@@ -84,20 +91,29 @@ export const LayerContainer = () => {
       />
 
       <Box label="Layers" labelCss={{ marginBottom: '8px', fontSize: '16px' }}>
+        <Button css={{ marginBottom: '10px' }} onClick={addLayer}>
+          Add Layer
+        </Button>
         <SortableList
           data={layers}
           renderItem={({ item, dragHandleProps }) => (
             <div {...dragHandleProps} key={item.id}>
               <LayerItem
-                name={item.label}
+                name={item.settings.color}
                 selected={selectedLayer?.id === item.id}
                 onClick={() => {
                   selectLayer(item.id)
                 }}
+                onRemove={() => removeLayer(item.id)}
               />
             </div>
           )}
-          onDragEnd={console.log}
+          onDragEnd={(result) => {
+            if (!result.destination) {
+              return
+            }
+            sortLayers(result.source.index, result.destination.index)
+          }}
         />
       </Box>
     </Box>

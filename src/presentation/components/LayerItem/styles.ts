@@ -10,6 +10,10 @@ export const container =
     justify-content: space-between;
     align-items: center;
     margin-bottom: 8px;
+
+    &:hover {
+      background-color: ${colors.gray3};
+    }
   `
 
 export const clear = ({ colors,fonts }: Theme) => css`
