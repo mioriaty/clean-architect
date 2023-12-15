@@ -2,7 +2,7 @@
 
 ## Mô tả bài toán
 
-Người dùng có thể thêm, sửa, xoá, sắp xếp các lớp box shadow. Mỗi lớp sẽ có tuỳ chỉnh cho từng thuộc tính của box shadow (chỉnh chiều dọc, ngang, độ phủ, độ mờ, màu, đảo ngược bóng). Giao diện quản lý lớp box shadow sẽ cung cấp các ô nhập thông tin cho từng thuộc tính của lớp box shadow. Các thuộc tính của lớp box shadow có thể được nhập dưới dạng số hoặc giá trị văn bản.
+Người dùng có thể thêm, sửa, xoá, sắp xếp các lớp box shadow. Mỗi lớp sẽ có tuỳ chỉnh cho từng thuộc tính của box shadow (chỉnh chiều dọc, ngang, độ phủ, độ mờ, màu, đảo ngược bóng). Giao diện quản lý lớp box shadow sẽ cung cấp các ô nhập thông tin cho từng thuộc tính của lớp box shadow. Các thuộc tính của lớp box shadow có thể được nhập dưới dạng số hoặc chuỗi.
 
 ## Từ mô tả, ta có
 

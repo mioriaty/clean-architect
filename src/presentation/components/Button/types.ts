@@ -5,7 +5,7 @@ export interface ButtonProps {
   /** React children */
   children: ReactNode;
   /** Các kích thước của button */
-  size?: Size;
+  size?: string;
   /** Bật lên sẽ dài full 100% */
   block?: boolean;
   /** Thuộc tính href của thẻ a */

@@ -6,6 +6,6 @@ export interface PortalProps {
   visible: boolean;
   containerCss?: Interpolation<Theme>;
   bodyCss?: Interpolation<Theme>;
-  onOutsideClick?: () => void;
   children?: ReactNode;
+  onOutsideClick?: () => void;
 }
