@@ -1,4 +1,4 @@
-import { BoxShadowEntity } from '@/domain/entities/BoxShadow'
+import { BoxShadowEntity } from '@/domain/entities/box-shadow.enitity'
 
 export interface LayerEntity {
   id: string

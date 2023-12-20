@@ -1,4 +1,4 @@
-import { Box } from '@/presentation/components/Box'
+import { Box } from '@/presentation/components/box'
 import { useLayerStore } from '@/stores/layer.store'
 
 export const PreviewContainer = () => {

@@ -1,5 +1,5 @@
-import { BoxShadowEntity } from '@/domain/entities/BoxShadow'
-import { LayerEntity } from '@/domain/entities/Layer'
+import { BoxShadowEntity } from '@/domain/entities/box-shadow.enitity'
+import { LayerEntity } from '@/domain/entities/layer.entity'
 
 const defaultBoxShadow: BoxShadowEntity = {
   inset: false,

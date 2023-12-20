@@ -1,4 +1,4 @@
-import { LayerEntity } from '@/domain/entities/Layer'
+import { LayerEntity } from '@/domain/entities/layer.entity'
 import { layerService } from '@/infrastructure/services/layer.service'
 
 export const sortLayersUserCase = (

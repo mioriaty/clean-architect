@@ -1,9 +1,9 @@
-import { Box } from '@/presentation/components/Box'
-import { Button } from '@/presentation/components/Button'
-import { ColorPicker } from '@/presentation/components/ColorPicker'
-import { LayerItem } from '@/presentation/components/LayerItem'
-import { Slider } from '@/presentation/components/Slider'
-import { SortableList } from '@/presentation/components/SortableList'
+import { Box } from '@/presentation/components/box'
+import { Button } from '@/presentation/components/button'
+import { ColorPicker } from '@/presentation/components/color-picker'
+import { LayerItem } from '@/presentation/components/layer-item'
+import { Slider } from '@/presentation/components/slider'
+import { SortableList } from '@/presentation/components/sortable-list'
 import { useLayerStore } from '@/stores/layer.store'
 
 export const LayerContainer = () => {

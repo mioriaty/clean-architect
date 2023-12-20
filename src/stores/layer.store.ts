@@ -1,9 +1,14 @@
-import { createLayerUserCase } from '@/application/layer/createLayer'
-import { deleteLayerUserCase } from '@/application/layer/deleteLayer'
-import { sortLayersUserCase } from '@/application/layer/sortLayers'
-import { updateLayerUserCase } from '@/application/layer/updateLayer'
-import { LayerEntity } from '@/domain/entities/Layer'
-import { DEFAULT_LAYER_ID, defaultLayerItem } from '@/infrastructure/data/layer.data'
+import { createLayerUserCase } from '@/application/layer/create.usecase'
+import { deleteLayerUserCase } from '@/application/layer/delete.usecase'
+import { sortLayersUserCase } from '@/application/layer/sort.usecase'
+import { updateLayerUserCase } from '@/application/layer/update.usecase'
+import { BoxShadowEntity } from '@/domain/entities/box-shadow.enitity'
+import { LayerEntity } from '@/domain/entities/layer.entity'
+import {
+  DEFAULT_LAYER_ID,
+  defaultLayerItem,
+} from '@/infrastructure/data/layer.data'
+import { layerService } from '@/infrastructure/services/layer.service'
 import { create } from 'zustand'
 
 export interface LayerStore {
@@ -12,7 +17,7 @@ export interface LayerStore {
   addLayer(): void
   removeLayer(id: string): void
   selectLayer(id: string): void
-  updateLayer(id: string, settings: Partial<LayerEntity['settings']>): void
+  updateLayer(id: string, settings: Partial<BoxShadowEntity>): void
   sortLayers(sourceIndex: number, destinationIndex: number): void
 }
 
@@ -20,12 +25,12 @@ export const useLayerStore = create<LayerStore>((set) => ({
   layers: [defaultLayerItem],
   idActive: DEFAULT_LAYER_ID,
   addLayer() {
-    const newLayer = createLayerUserCase()
+    const newLayer = createLayerUserCase(layerService)
     set((state) => ({ layers: state.layers.concat(newLayer) }))
   },
   removeLayer(id) {
     set((state) => ({
-      layers: deleteLayerUserCase(state.layers, id),
+      layers: deleteLayerUserCase(layerService, state.layers, id),
     }))
   },
   selectLayer(id) {

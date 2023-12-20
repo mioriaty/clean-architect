@@ -1,5 +1,5 @@
-import { SliderProps } from '@/presentation/components/Slider/types'
-import { Tooltip } from '@/presentation/components/Tooltip'
+import { SliderProps } from '@/presentation/components/slider/types'
+import { Tooltip } from '@/presentation/components/tooltip'
 import { FC, useEffect, useState } from 'react'
 import * as styles from './styles'
 

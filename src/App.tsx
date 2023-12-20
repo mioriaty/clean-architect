@@ -1,5 +1,5 @@
 import '@/presentation/assets/styles/App.css'
-import { ThemeProvider } from '@/presentation/providers/ThemeProvider'
+import { ThemeProvider } from '@/presentation/providers/theme.provider'
 import { AppRoutes } from '@/routes'
 
 function App() {

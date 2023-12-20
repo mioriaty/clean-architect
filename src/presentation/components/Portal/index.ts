@@ -1,2 +1,3 @@
-export { Portal } from './Portal';
+export { Portal } from './portal';
 export type { PortalProps } from './types';
+

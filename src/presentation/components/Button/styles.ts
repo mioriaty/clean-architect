@@ -1,4 +1,5 @@
 import { css, Theme } from '@emotion/react';
+type Size = string;
 
 interface StyleMapping {
   fontSize: number;

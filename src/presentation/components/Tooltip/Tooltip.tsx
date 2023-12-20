@@ -1,7 +1,7 @@
 import { FC, useState } from 'react'
 
-import { Portal } from '@/presentation/components/Portal'
-import { useMeasure } from '@/presentation/hooks/useMeasure'
+import { Portal } from '@/presentation/components/portal'
+import { useMeasure } from '@/presentation/hooks/use-measure'
 import * as styles from './styles'
 import { TooltipProps } from './types'
 

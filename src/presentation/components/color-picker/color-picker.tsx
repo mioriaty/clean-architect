@@ -1,4 +1,4 @@
-import { ColorPickerProps } from '@/presentation/components/ColorPicker/types'
+import { ColorPickerProps } from '@/presentation/components/color-picker/types'
 import { FC } from 'react'
 
 export const ColorPicker: FC<ColorPickerProps> = ({ color, onChange }) => {

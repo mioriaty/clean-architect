@@ -1,5 +1,5 @@
-import { LayerContainer } from '@/containers/LayerContainer/LayerContainer'
-import { PreviewContainer } from '@/containers/PreviewContainer/PreviewContainer'
+import { LayerContainer } from '@/containers/layer/layer.container'
+import { PreviewContainer } from '@/containers/preview/preview.container'
 import { css } from '@emotion/react'
 import { FC } from 'react'
 

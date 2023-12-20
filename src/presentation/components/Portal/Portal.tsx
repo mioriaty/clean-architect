@@ -1,8 +1,8 @@
 import { FC, useRef } from 'react'
 import { createPortal } from 'react-dom'
 
-import { createPortalWrapper } from '@/presentation/components/Portal/createPortalWrapper'
-import { useOuterClick } from '@/presentation/hooks/useClickOuter'
+import { createPortalWrapper } from '@/presentation/components/portal/create-portal-wrapper'
+import { useOuterClick } from '@/presentation/hooks/use-click-outer'
 import { PortalProps } from './types'
 
 const portalWrapperEl = createPortalWrapper()

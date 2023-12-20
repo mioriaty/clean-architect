@@ -1,4 +1,4 @@
-import { BoxProps } from '@/presentation/components/Box/types'
+import { BoxProps } from '@/presentation/components/box/types'
 import { FC } from 'react'
 import * as styles from './styles'
 

@@ -1,4 +1,4 @@
-import { LayerItemProps } from '@/presentation/components/LayerItem/types'
+import { LayerItemProps } from '@/presentation/components/layer-item/types'
 import { FC } from 'react'
 import * as styles from './styles'
 

@@ -1,3 +1,3 @@
-export { Box } from './Box'
+export { Box } from './box'
 export type { BoxProps } from './types'
 

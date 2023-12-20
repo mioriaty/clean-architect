@@ -1,4 +1,4 @@
-import { SortableProps } from '@/presentation/components/SortableList/types';
+import { SortableProps } from '@/presentation/components/sortable-list/types';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 
 
