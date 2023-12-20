@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1703081376565" clover="3.2.0">
+  <project timestamp="1703081376565" name="All files">
+    <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2" elements="9" coveredelements="9" complexity="0" loc="7" ncloc="7" packages="2" files="3" classes="3"/>
+    <package name="application.layer">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="create.usecase.ts" path="E:\wiloke\clean-architect\src\application\layer\create.usecase.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+      <file name="delete.usecase.ts" path="E:\wiloke\clean-architect\src\application\layer\delete.usecase.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="infrastructure.data">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="layer.data.ts" path="E:\wiloke\clean-architect\src\infrastructure\data\layer.data.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
