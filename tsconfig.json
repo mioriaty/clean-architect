@@ -15,18 +15,19 @@
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react",
     "esModuleInterop": true,
-    
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    
+
     /* Alias */
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "types": ["cypress"]
   },
-  "include": ["src"],
+  "include": ["src", "cypress"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -91,13 +91,13 @@ export const LayerContainer = () => {
       />
 
       <Box label="Layers" labelCss={{ marginBottom: '8px', fontSize: '16px' }}>
-        <Button css={{ marginBottom: '10px' }} onClick={addLayer}>
+        <Button data-create="create-layer" css={{ marginBottom: '10px' }} onClick={addLayer}>
           Add Layer
         </Button>
         <SortableList
           data={layers}
           renderItem={({ item, dragHandleProps }) => (
-            <div {...dragHandleProps} key={item.id}>
+            <div {...dragHandleProps} key={item.id} data-layer-id={item.id}>
               <LayerItem
                 name={item.settings.color}
                 selected={selectedLayer?.id === item.id}
