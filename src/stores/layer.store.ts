@@ -8,7 +8,6 @@ import {
   DEFAULT_LAYER_ID,
   defaultLayerItem,
 } from '@/infrastructure/data/layer.data'
-import { layerService } from '@/infrastructure/services/layer.service'
 import { create } from 'zustand'
 
 export interface LayerStore {
@@ -25,12 +24,12 @@ export const useLayerStore = create<LayerStore>((set) => ({
   layers: [defaultLayerItem],
   idActive: DEFAULT_LAYER_ID,
   addLayer() {
-    const newLayer = createLayerUserCase(layerService)
+    const newLayer = createLayerUserCase()
     set((state) => ({ layers: state.layers.concat(newLayer) }))
   },
   removeLayer(id) {
     set((state) => ({
-      layers: deleteLayerUserCase(layerService, state.layers, id),
+      layers: deleteLayerUserCase(state.layers, id),
     }))
   },
   selectLayer(id) {

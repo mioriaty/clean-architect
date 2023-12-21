@@ -1,11 +1,20 @@
-import { BoxShadowEntity } from '@/domain/entities/box-shadow.enitity'
-import { LayerEntity } from '@/domain/entities/layer.entity'
-import { layerService } from '@/infrastructure/services/layer.service'
+import { LayerRepository } from '@/domain/repositories/layer.repository'
 
-export const updateLayerUserCase = (
-  layers: LayerEntity[],
-  layerId: string,
-  settings: Partial<BoxShadowEntity>
+export const updateLayerUserCase: LayerRepository['updateLayerItem'] = (
+  layers,
+  layerId,
+  settings
 ) => {
-  return layerService.updateLayerItem(layers, layerId, settings)
+  return layers.map((layer) => {
+    if (layer.id === layerId) {
+      return {
+        ...layer,
+        settings: {
+          ...layer.settings,
+          ...settings,
+        },
+      }
+    }
+    return layer
+  })
 }

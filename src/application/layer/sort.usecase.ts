@@ -1,10 +1,11 @@
 import { LayerEntity } from '@/domain/entities/layer.entity'
-import { layerService } from '@/infrastructure/services/layer.service'
+import { LayerRepository } from '@/domain/repositories/layer.repository'
+import { reorder } from '@/presentation/utils/reorder'
 
-export const sortLayersUserCase = (
+export const sortLayersUserCase: LayerRepository['sortLayerItem'] = (
   layers: LayerEntity[],
   sourceIndex: number,
   destinationIndex: number
 ) => {
-  return layerService.sortLayerItem(layers, sourceIndex, destinationIndex)
+  return reorder(layers, sourceIndex, destinationIndex)
 }
