@@ -1,3 +1,4 @@
+import { defaultLayerItem } from '@/infrastructure/data/layer.data'
 import { createLayerUserCase } from '../create.usecase'
 
 describe('createLayerUserCase', () => {
@@ -14,5 +15,7 @@ describe('createLayerUserCase', () => {
     expect(layerItem).toHaveProperty('settings')
 
     // You can also assert specific values if needed
+    expect(layerItem.label).toBe(defaultLayerItem.label)
+    expect(layerItem.settings).toEqual(defaultLayerItem.settings)
   })
 })
