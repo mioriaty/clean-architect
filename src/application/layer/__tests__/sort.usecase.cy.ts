@@ -18,7 +18,7 @@ describe('sortLayersUserCase', () => {
       destinationIndex
     )
 
-    expect(updatedLayers).toEqual<LayerEntity[]>([
+    expect(updatedLayers).to.deep.equal([
       { id: '2', label: 'Layer 2', settings: defaultLayerItem.settings },
       { id: '3', label: 'Layer 3', settings: defaultLayerItem.settings },
       { id: '1', label: 'Layer 1', settings: defaultLayerItem.settings },

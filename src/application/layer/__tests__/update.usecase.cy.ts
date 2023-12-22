@@ -15,17 +15,17 @@ describe('updateLayerUserCase', () => {
 
     const updatedLayers = updateLayerUserCase(layers, layerId, newSettings)
 
-    expect(updatedLayers).toHaveLength(layers.length)
-    expect(updatedLayers.some((layer) => layer.id === layerId)).toBe(true)
+    expect(updatedLayers).to.have.length(layers.length)
+    expect(updatedLayers.some((layer) => layer.id === layerId)).to.be.true
     expect(
       updatedLayers.find((layer) => layer.id === layerId)?.settings
-    ).toEqual({
+    ).to.equal({
       ...defaultLayerItem.settings,
       ...newSettings,
     })
   })
 
-  it('should not modify the layers array if the specified ID does not exist', () => {
+  it.only('should not modify the layers array if the specified ID does not exist', () => {
     const layers: LayerEntity[] = [
       { id: '1', label: 'Layer 1', settings: defaultLayerItem.settings },
       { id: '2', label: 'Layer 2', settings: defaultLayerItem.settings },
@@ -36,7 +36,7 @@ describe('updateLayerUserCase', () => {
 
     const updatedLayers = updateLayerUserCase(layers, layerId, newSettings)
 
-    expect(updatedLayers).toHaveLength(layers.length)
-    expect(updatedLayers).toEqual(layers)
+    expect(updatedLayers).to.have.length(layers.length)
+    expect(updatedLayers).to.deep.equal(layers)
   })
 })

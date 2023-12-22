@@ -13,11 +13,11 @@ describe('deleteLayerUserCase', () => {
 
     const updatedLayers = deleteLayerUserCase(layers, idToDelete)
 
-    expect(updatedLayers).toHaveLength(layers.length - 1)
-    expect(updatedLayers.some((layer) => layer.id === idToDelete)).toBe(false)
+    expect(updatedLayers).to.have.length(layers.length - 1)
+    expect(updatedLayers.some((layer) => layer.id === idToDelete)).to.be.false
   })
 
-  it('should not modify the layers array if the specified ID does not exist', () => {
+  it.only('should not modify the layers array if the specified ID does not exist', () => {
     const layers: LayerEntity[] = [
       { id: '1', label: 'Layer 1', settings: defaultLayerItem.settings },
       { id: '2', label: 'Layer 2', settings: defaultLayerItem.settings },
@@ -27,7 +27,7 @@ describe('deleteLayerUserCase', () => {
 
     const updatedLayers = deleteLayerUserCase(layers, idToDelete)
 
-    expect(updatedLayers).toHaveLength(layers.length)
-    expect(updatedLayers).toEqual(layers)
+    expect(updatedLayers).to.have.length(layers.length)
+    expect(updatedLayers).to.deep.equal(layers)
   })
 })

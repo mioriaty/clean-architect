@@ -1,6 +1,6 @@
 describe('Box Shadow Generator', () => {
   it('Create Layer', () => {
-    cy.visit('http://127.0.0.1:5173/')
+    cy.visit('http://127.0.0.1:8000/')
 
     cy.get('[data-create="create-layer"]')
       .should('exist')
