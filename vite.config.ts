@@ -6,7 +6,7 @@ import svgrPlugin from 'vite-plugin-svgr'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 // https://vitejs.dev/config/
-export default defineConfig(({ command, mode }) => ({
+export default defineConfig(() => ({
   plugins: [
     react(),
     tsconfigPaths(),
@@ -14,16 +14,6 @@ export default defineConfig(({ command, mode }) => ({
     svgrPlugin(),
     splitVendorChunkPlugin(),
   ],
-  build: {
-    chunkSizeWarningLimit: 1600,
-    minify: mode === 'development' ? false : 'terser',
-    sourcemap: command === 'serve' ? 'inline' : false,
-    rollupOptions: {
-      output: {
-        indent: false,
-      },
-    },
-  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src/'),
